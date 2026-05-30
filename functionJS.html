@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+     //function is a reusable block of code
+
+     //normal function
+     //without parameters
+     function demo(){
+     console.log("hello JS");
+     }
+     demo();//function calling
+
+     //with parameters
+     function demo1(text){
+        console.log("hello"+text);
+     }
+     demo1("react");
+     //with default parameters
+     function cal(a,b=30){
+        console.log("addition of two number is"+(a+b));
+     }
+     cal(12);
+
+     //anonymous function a function that does not have an identifier (name)
+     //let msg=();  //object
+     let msg=function(){
+        console.log("hello advanced JS");
+
+     };
+     msg();
+     //shore code for above function i.e. arrow function
+     let msg1=()=>console.log("hello function as an arrow");
+     msg1();
+     //arrow function using multilines
+     let add=(a,b)=>{
+        console.log("first no is "+a);
+        console.log("second no is "+b);
+        console.log("addition of two number is"+(a+b));
+     }
+     add(4,5);
+
+     //IIFE:(Immediately Invoked Function Expression)
+     //a JavaScript function that runs as soon as it is defined
+     //PAIR OF PARANTHESIS IS WRITTEN
+     (function(){
+        console.log("IIFE in JS");
+     })();
+
+     function mul(callback){
+        var num1= 10;
+        console.log("first value is"+num1);
+        var num2= 20;
+        console.log("second value is"+num2);
+       var res=num1*num2;
+       callback(res);
+
+     }
+     function result(res){
+        console.log("multiplication is"+ res);
+
+     }
+     mul(result);
+     //callback function using setTimeout API
+
+     function msg2(){
+        console.log("hello call back");
+        document.writeln("hello");
+     }
+     function loading(){
+        document.writeln("loading......");
+
+     };
+
+     setTimeout(msg2,2000);
+    loading();
+
+    //map filter  and reduce
+    let num=[3,4,5,6,7];
+    let finalResult=num.map(n=>n*2);
+    console.log(finalResult);
+
+    //filter method
+    let finalResult1=num.map(n=>n*2)
+
+
+
+    //reduce method
+    let finalresult2=num.reduce((total,n)=>total+n);
+    console.log(finalresult2);
+    //promises
+
+    //JavaScript promises are objects that represent the eventual completion (or failure) of an asynchronous operation and its resulting value
+    //Promise States
+//A promise exists in one of three states: 
+
+//Pending: Initial state, operation still in progress.
+//fulfilled (Resolved): Operation completed successfully.
+//Rejected: Operation failed.
+//A promise is settled when it is no longer pending.
+
+let promise=new Promise(function(resolve,reject){//resolve 
+    let age =25;
+    if (age>=18){
+        resolve("valid age");
+    }
+    else
+    reject("wait foe next year");
+
+});
+promise.then(result=>console.log(result)).
+catch(error=>console.log(error)).
+finally(msg=>console.log("done"));
+
+//async await javascript
+//Async functions are a way to handle asynchronous operations in JavaScript. They allow you to write asynchronous code that looks and behaves like synchronous code, making it easier to read and maintain.
+
+async function userData(){
+   try{
+   let data= await fetch('https://dummyjson.com/products');
+   let updatedData=await data.json();
+   console.log(updatedData);
+   }
+   catch(error){
+    console.log("not fetched " + error);
+   }
+}
+userData();
+//local storage in js
+//Local storage is a web storage mechanism that allows you to store key-value pairs in a web browser. It provides a way to store data on the client side, allowing you to persist data across page reloads and browser sessions. Local storage is part of the Web Storage API and is supported by most modern browsers.
+//local storage methods
+let userInfo={
+    name:"john",
+    age:30,
+    city:"new york",
+    mob:1234567890
+   };
+   //convert json object to string using JSON.stringify() method and store in local storage
+   localStorage.setItem('preferences',JSON.stringify(userInfo));
+   let storagePreferences=JSON.parse(localStorage.getItem("preferences"));
+   console.log(storagePreferences.name);
+
+
+
+
+    </script>
+</body>
+</html>

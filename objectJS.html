@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object in js</title>
+</head>
+<body>
+   <script>
+    //object - it is collectionb of keys(property) and its value.
+    //create object - literal{} and new keyword
+    //create object for student
+    let student={
+     id:101,
+     name:"abhay",
+     age:23,
+     isMarried:false,
+     address:{
+         streetNo:8,
+         area:"khandala",
+         pincode:228009,
+         city:"lucknow"
+     },
+     education:["BTech","CSE",18,2025],
+     getInfo:function(){
+      return "my details are"+ student.id + "and" + student.name; 
+     },
+     examDone:null
+    };
+    
+    //console.log(student);
+    //console.log(typeof(student));
+    //access objects properties/keys using dot notation
+    console.log(student.getInfo());
+     console.log(student.address);
+     console.log(student.education[2]);//getting value from array index 
+     console.log(student.address.pincode);//getting a particular detail  from function
+     //find object's key in object
+     console.log('id'in student);
+     //delete object's key from object
+     console.log(delete student.name);//this will  delete students name from the object
+     console.log(student)//now students details will be printed without student's name
+     //object's length
+     let StudentKeys=Object.keys(student);
+     console.log(StudentKeys.length);
+     //ITERATE KEYS OF OBJECT
+     //using for--loop
+     for(let i=0;i<StudentKeys.length;i++){
+        console.log(student[StudentKeys[i]]);
+
+     }
+     // for in loop
+     for(let x in student){
+        console.log(student[x]);
+     }//this will print all info at once
+     //here x itself will calculate the length and make its index itself 
+
+     //create object using new keyword
+     
+     let myInfo=new Object();
+     myInfo.name="VIKAS";
+     myInfo.age=23;
+     myInfo.isMarried=true;
+     myInfo.city="delhi";
+
+     //access objects properties/keys using dot notation
+      console.log(myInfo);
+       console.log(myInfo.city);
+     //access object's property using [] notation
+       console.log(myInfo['age']);
+      for(let x of myInfo){
+        console.log(myInfo[age])
+      }
+
+
+   </script> 
+</body>
+</html>

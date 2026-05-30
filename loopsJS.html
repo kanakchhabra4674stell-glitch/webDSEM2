@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in js</title>
+</head>
+<body>
+    <script>
+        //repeatedly execute a block of code untill a specified condition is met.
+
+        //for........while......do--while.....for-in....for--of
+        
+        //for.... in
+        let studentList=["vikas","abhay","neelesh","madan","john"];
+        for(let i=0;i<studentList.length;i++)
+        {
+            //console.log(studentList[i]);
+
+        }  
+        //The for...in loop in JavaScript is used to iterate over the enumerable properties (keys) of an object. It is primarily designed for objects and not recommended for use with arrays.   
+        for(let x in studentList){
+        console.log(studentList[x]);
+        }
+        //The for...of loop in JavaScript provides a simple, direct way to iterate over the values of iterable objects such as arrays, strings, Maps, and Sets. 
+         for(let y of studentList){
+            console.log(y);
+            
+         }
+    </script>
+</body>
+</html>
