@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>DOM Manipulation</title></head>
+<body>
+<h1 id="head">Welcome</h1>
+<input type="text" id="msg" placeholder="Enter message">
+<p id="para">This is a paragraph</p>
+<button onclick="changeText()">Change Heading</button>
+<button onclick="changeColor()">Background Color</button>
+<button onclick="changeSize()">Font Size</button>
+<button onclick="hideShow()">Show/Hide</button>
+<button onclick="resetPage()">Reset</button>
+<script>
+function changeText(){
+document.getElementById("head").innerHTML =
+document.getElementById("msg").value;
+}
+function changeColor(){ document.body.style.background = "lightblue"; }
+function changeSize(){ document.getElementById("head").style.fontSize = "40px"; }
+function hideShow(){
+let p = document.getElementById("para");
+p.style.display = (p.style.display == "none") ? "block" : "none";
+}
+function resetPage(){ location.reload(); }
+</script>
+</body>
+</html>

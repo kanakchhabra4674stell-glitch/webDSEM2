@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>Marks Calculator</title></head>
+<body>
+<h2>Student Result</h2>
+<button onclick="calculate()">Calculate Result</button>
+<p id="result"></p>
+<script>
+function calculate(){
+let n = prompt("Enter number of subjects");
+let total = 0;
+for(let i=1; i<=n; i++){
+total += Number(prompt("Enter marks"));
+}
+let avg = total / n;
+let grade, status;
+if(avg >= 90) grade = "A";
+else if(avg >= 75) grade = "B";
+else grade = "C";
+status = avg >= 40 ? "Pass" : "Fail";
+document.getElementById("result").innerHTML =
+"Total = " + total + "<br>" +
+"Average = " + avg + "<br>" +
+"Grade = " + grade + "<br>" +
+"Result = " + status;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Employee System</title></head>
+<body>
+<h2>Employee Details</h2>
+<button onclick="show()">Display Employees</button>
+<button onclick="highSalary()">High Salary</button>
+<button onclick="totalSalary()">Total Salary</button>
+<p id="output"></p>
+<script>
+let emp = [
+{name:"Rahul", id:1, salary:60000, dept:"IT"},
+{name:"Aman", id:2, salary:40000, dept:"HR"}
+];
+function show(){
+let data = "";
+emp.forEach(e => { data += e.name + " - " + e.salary + "<br>"; });
+document.getElementById("output").innerHTML = data;
+}
+function highSalary(){
+let high = emp.filter(e => e.salary > 50000);
+document.getElementById("output").innerHTML =
+"Employees with salary > 50000 = " + high.length;
+}
+function totalSalary(){
+let total = emp.reduce((s,e) => s+e.salary, 0);
+document.getElementById("output").innerHTML = "Total Salary = " + total;
+}
+</script>
+</body>
+</html>
